@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import GridUI from "./Components/GridUI";
+import SearchBar from "./Components/SearchBar";
+import "./App.css";
 
 function App() {
+  const [giphies, setGiphies] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <SearchBar setData={setGiphies} />
+      <br />
+      <div className="container">
+        <GridUI data={giphies} />
+      </div>
     </div>
   );
 }

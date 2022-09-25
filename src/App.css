@@ -1,38 +1,111 @@
-.App {
-  text-align: center;
+* {
+  background-color: #fbf2cf;
+  font-family: "Montserrat", sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.searchbox {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 1rem;
+}
+.searchbox h2 {
+  font-size: xx-large;
+}
+.searchbox-container {
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+  margin-top: 1rem;
+}
+
+.searchbox-container input[type="search"] {
+  padding: 1rem 2rem;
+  width: 40%;
+  border: none;
+  border: 4px solid #87805e;
+  border-radius: 12px;
+  outline: none;
+  font-size: larger;
+}
+.searchbox-container input[type="radio"] {
+  height: 2rem;
+  width: 2rem;
+  accent-color: #87805e;
+}
+
+.searchbox-container input[type="radio"]:not(:checked) {
+  height: 1.8rem;
+}
+.searchbox-container button {
+  width: 20%;
+  font-size: larger;
+  padding: 1.2rem 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  background-color: #87805e;
   color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  padding: 1rem;
+  background-color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.gridUI {
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+}
+
+.gridUI div {
+  width: 100%;
+  height: 100%;
+  border: 0px solid white;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.gridUI div img {
+  width: 100%;
+  height: 100%;
+}
+.gridUI div button {
+  padding: 1rem;
+  background-color: #25d366;
+  color: white;
+  font-size: x-large;
+  cursor: pointer;
+  border: none;
+}
+
+@media only screen and (max-width: 657px) {
+  .searchbox {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .searchbox-container {
+    flex-direction: column;
+  }
+  .searchbox-container input[type="search"] {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .searchbox-container button {
+    width: 100%;
+  }
+  .searchbox-container input[type="radio"] {
+    display: flex;
+    margin-top: 0.5rem;
+  }
+  .gridUI {
+    display: flex;
+    flex-direction: column;
   }
 }
